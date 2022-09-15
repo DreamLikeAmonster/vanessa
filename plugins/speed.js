@@ -92,7 +92,7 @@ let handler = async (m, { conn, isRowner}) => {
         })
         await Promise.all([p1, p2, p3, p4])        
         let _ramTotal = (ramTotal + ' MB')
-        let cek = await(await fetch("https://api.myip.com")).json()
+        let cek = await(await fetch("https://api.myip.com"))
         let ip = cek.ip
         let cr = cek.country
         let cc = cek.cc
