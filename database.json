@@ -79,7 +79,7 @@
     },
     "6287889347327@s.whatsapp.net": {
       "exp": 640000071817810600,
-      "limit": 10,
+      "limit": 1819291918281919910,
       "lastclaim": 1663325808276,
       "lastrob": 0,
       "lastbunuhi": 0,
@@ -95,39 +95,39 @@
       "level": 9309998299228828,
       "role": "Beginner",
       "autolevelup": true,
-      "money": 4044629292729292929929292929191919191985,
+      "money": 4.044629292729293e+39,
       "bank": 0,
-      "atm": 0,
-      "fullatm": 0,
+      "atm": 9992829289292829292922992928,
+      "fullatm": 5000000000000,
       "health": 77,
       "potion": 41719792772913,
       "trash": 10297192774,
       "wood": 487191727280,
       "rock": 4872919272,
       "string": 5619528822711,
-      "emerald": 16282822793,
-      "diamond": 252929202,
+      "emerald": 16282822790,
+      "diamond": 252929196,
       "gold": 26202862929240,
       "iron": 25629292721,
       "upgrader": 0,
-      "common": 496,
-      "uncommon": 333,
-      "mythic": 217,
-      "legendary": 159999629292822828998186,
+      "common": 49527172726,
+      "uncommon": 3362727723,
+      "mythic": 216217271717,
+      "legendary": 1.5999962929282285e+23,
       "superior": 0,
       "pet": 192,
-      "horse": 0,
+      "horse": 99999999999,
       "horseexp": 0,
-      "cat": 1,
+      "cat": 999999999999,
       "catngexp": 0,
-      "fox": 1,
+      "fox": 99999999999,
       "foxexp": 0,
-      "dog": 1,
-      "dogexp": 0,
+      "dog": 999999999999,
+      "dogexp": 20,
       "horselastfeed": 0,
       "catlastfeed": 0,
       "foxlastfeed": 0,
-      "doglastfeed": 0,
+      "doglastfeed": 1663327054371,
       "armor": 1,
       "armordurability": 50,
       "sword": 1,
@@ -149,7 +149,7 @@
       "premium": false,
       "premiumTime": 8.640000000166321e+22,
       "limitjoin": 0,
-      "petFood": 629292862927382378228292828289,
+      "petFood": 6.292928629273824e+29,
       "catexp": 0,
       "robo": 0,
       "roboxp": 0,
@@ -3238,10 +3238,10 @@
   },
   "stats": {
     "menu.js": {
-      "total": 19,
-      "success": 19,
-      "last": 1663325772067,
-      "lastSuccess": 1663325772067
+      "total": 22,
+      "success": 22,
+      "last": 1663327143988,
+      "lastSuccess": 1663327143988
     },
     "exp-daftar.js": {
       "total": 7,
@@ -3256,9 +3256,9 @@
       "lastSuccess": 1663323718887
     },
     "speed.js": {
-      "total": 3,
+      "total": 4,
       "success": 0,
-      "last": 1663321659169,
+      "last": 1663327121950,
       "lastSuccess": 0
     },
     "_autoreact.js": {
@@ -3364,10 +3364,10 @@
       "lastSuccess": 1663323284820
     },
     "rpg-inventory.js": {
-      "total": 5,
-      "success": 5,
-      "last": 1663325936055,
-      "lastSuccess": 1663325936055
+      "total": 9,
+      "success": 9,
+      "last": 1663327227759,
+      "lastSuccess": 1663327227759
     },
     "rpg-dungeon.js": {
       "total": 4,
@@ -3388,10 +3388,10 @@
       "lastSuccess": 1663325830463
     },
     "rpg-craft.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1663325852447,
-      "lastSuccess": 1663325852447
+      "total": 5,
+      "success": 5,
+      "last": 1663327240083,
+      "lastSuccess": 1663327240083
     },
     "rpg-petstore.js": {
       "total": 6,
@@ -3416,6 +3416,36 @@
       "success": 2,
       "last": 1663325971297,
       "lastSuccess": 1663325971297
+    },
+    "rpg-feed.js": {
+      "total": 4,
+      "success": 4,
+      "last": 1663327069673,
+      "lastSuccess": 1663327069673
+    },
+    "xp-profile.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1663327127025,
+      "lastSuccess": 1663327127025
+    },
+    "info-statserver.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1663327182684,
+      "lastSuccess": 1663327182684
+    },
+    "info-totalfitur.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1663327196926,
+      "lastSuccess": 1663327196926
+    },
+    "bank-cek.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1663327218652,
+      "lastSuccess": 1663327218652
     }
   },
   "msgs": {},
