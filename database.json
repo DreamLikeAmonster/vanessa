@@ -3288,24 +3288,6 @@
     }
   },
   "chats": {
-    "6287889347327@s.whatsapp.net": {
-      "isBanned": false,
-      "welcome": false,
-      "detect": false,
-      "sWelcome": "",
-      "sBye": "",
-      "sPromote": "",
-      "sDemote": "",
-      "delete": true,
-      "antiLink": false,
-      "sticker": false,
-      "viewonce": true,
-      "antiToxic": true,
-      "simi": true,
-      "expired": 0,
-      "nsfw": false,
-      "premnsfw": false
-    },
     "status@broadcast": {
       "isBanned": false,
       "welcome": false,
