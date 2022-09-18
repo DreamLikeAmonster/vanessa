@@ -149,8 +149,8 @@ ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.m
 
 `,m)
 }
-handler.help = ['ping', 'speed']
-handler.tags = ['info', 'tools']
+handler.help = ['pg', 'spd']
+handler.tags = ['io', 'too']
 
 handler.command = /^(ping|speed|info)$/i
 export default handler
