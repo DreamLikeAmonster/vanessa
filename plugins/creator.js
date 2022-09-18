@@ -24,7 +24,7 @@ let teksbio = `${htki} *BIODATA* ${htka}
 *ᴀɢᴇ:* 15ᵗʰ
 *sᴛᴀᴛᴜs:* single 
 
-*ʙɪʀᴛʜᴅᴀʏ:* 21 Des 2002
+*ʙɪʀᴛʜᴅᴀʏ:* 07 Oct 2007
 *ᴀᴅᴅʀᴇss:* Indonesia, Jawa Barat, Bandung
 
 *- - sᴋɪʟʟs: - -* 
@@ -45,7 +45,6 @@ const sections = [
 	rows: [
 	    {title: "📱 • Nomor", rowId: ".owner nomor"},
 	{title: "🎨 • Biodata", rowId: ".owner bio"},
-	{title: "🌎 • Script", rowId: ".sc"},
 	]
     },{
 	title: `${htjava} SUPPORT ME –––––––·•`,
