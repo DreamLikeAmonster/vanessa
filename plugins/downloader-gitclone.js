@@ -8,9 +8,9 @@ let handler = async (m, {conn, text, args, usedPrefix, command }) => {
     m.reply(`D o w n l o a d i n g. . .`)
     conn.sendFile(m.chat, url, name, null, m)
 }
-handler.help = ['gitclone <username>/<repo>']
-handler.tags = ['downloader']
-handler.command = /gitclone/i
+handler.help = ['gitcne <username>/<repo>']
+handler.tags = ['dowader']
+handler.command = /gitce/i
 
 handler.limit = true
 

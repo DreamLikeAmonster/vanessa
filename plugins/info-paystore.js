@@ -7,11 +7,11 @@ let ss = '30'
 let sp = '35'
 let sv = '65'
 //premium
-let ph = '5'
-let pn = '20'
+let ph = '20'
+let pn = '30'
 let pp = '40'
 let pv = '50'
-let ppm = '999'
+let ppm = '100'
 let info = `
 ╭━━━━「 *SEWA* 」
 ┊⫹⫺ *Hemat:* _${sh}k/grup (1 minggu)_
