@@ -29,6 +29,7 @@ import {
   mongoDB,
   mongoDBV2
 } from './lib/mongoDB.js';
+import makeWASocket, {useSingleFileAuthState} from '@adiwajshing/baileys';
 const {
   useSingleFileAuthState,
   DisconnectReason
