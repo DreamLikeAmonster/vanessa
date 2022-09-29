@@ -32,7 +32,7 @@ import {
 const {
   useSingleFileAuthState,
   DisconnectReason
-} = await import('@adiwajshing/baileys')
+} = require('@adiwajshing/baileys')
 
 const { CONNECTING } = ws
 const { chain } = lodash
