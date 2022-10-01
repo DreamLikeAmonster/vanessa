@@ -5,6 +5,7 @@ const require = createRequire(import.meta.url);
 const jimp_1 = require('jimp')
 
 let handler = async (m, { conn, command, usedPrefix }) => {
+	let bot = conn.user.jid
 	let q = m.quoted ? m.quoted : m
 	let mime = (q.msg || q).mimetype || q.mediaType || ''
 	if (/image/g.test(mime) && !/webp/g.test(mime)) {
