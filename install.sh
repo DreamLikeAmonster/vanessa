@@ -6,5 +6,6 @@ pkg install ffmpeg
 pkg install imagemagick 
 git clone https://github.com/DreamLikeAmonster/vanessa
 cd vanessa
+npm i
 node.
 
