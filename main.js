@@ -1,30 +1,46 @@
-require('./config.js')
-const WebSocket = require('ws')
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+import './config.js';
+
+import { createRequire } from "module"; // Bring in the ability to create the 'require' method
 import path, { join } from 'path'
-import { platform } from 'procces'
-global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') { return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString() }
-global.__dirname = function dirname(pathURL) { return path.dirname(global.__filename(pathURL, true)) }
-global.__require = function require(dir = import.meta.url) { return createRequire(dir) }
-const fs = require('fs')
-const yargs require('yargs/yargs')
-const cp = require ('child_process')
-const _ = require('lodash')
-const syntaxerror = require('syntax-error')
-const os = require('os')
-const { format } from 'util';
-let simple = require('.lib/simple
-var low
-try {
-  low = require('lowdb')
-}
-const { Low, JSONFile  } = low
-const P = require('pino')
-const mongoDB require('./lib/mongoDB.js')
+import { fileURLToPath, pathToFileURL } from 'url'
+import { platform } from 'process'
+global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') { return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString() }; global.__dirname = function dirname(pathURL) { return path.dirname(global.__filename(pathURL, true)) }; global.__require = function require(dir = import.meta.url) { return createRequire(dir) }
+
+import * as ws from 'ws';
+import {
+  readdirSync,
+  statSync,
+  unlinkSync,
+  existsSync,
+  readFileSync,
+  watch
+} from 'fs';
+import yargs from 'yargs';
+import { spawn } from 'child_process';
+import lodash from 'lodash';
+import syntaxerror from 'syntax-error';
+import { tmpdir } from 'os';
+import { format } from 'util';
+import { makeWASocket, protoType, serialize } from './lib/simple.js';
+import { Low, JSONFile } from 'lowdb';
+import pino from 'pino';
+import {
+  mongoDB,
+  mongoDBV2
+} from './lib/mongoDB.js';
+import makeWASocket, {useSingleFileAuthState} from '@adiwajshing/baileys';
 const {
   useSingleFileAuthState,
   DisconnectReason
-} = require('@adiwajshing/baileys')
+} = await import('@adiwajshing/baileys')
 
+const { CONNECTING } = ws
+const { chain } = lodash
+const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
+
+protoType()
+serialize()
 
 global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
 // global.Fn = function functionCallBack(fn, ...args) { return fn.call(global.conn, ...args) }
@@ -32,15 +48,15 @@ global.timestamp = {
   start: new Date
 }
 
-const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
+const __dirname = global.__dirname(import.meta.url)
 
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
 global.prefix = new RegExp('^[' + (opts['prefix'] || '‎\/!#.\\').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
 
 global.db = new Low(
   /https?:\/\//.test(opts['db'] || '') ?
-    new cloudDBAdapter(opts['db']) : /mongodb/.test(opts['db']) ?
-       new mongoDB(opts['db]) :
+    new cloudDBAdapter(opts['db']) : /mongodb(\+srv)?:\/\//i.test(opts['db']) ?
+      (opts['mongodbv2'] ? new mongoDBV2(opts['db']) : new mongoDB(opts['db'])) :
       new JSONFile(`${opts._[0] ? opts._[0] + '_' : ''}database.json`)
 )
 
@@ -66,12 +82,10 @@ global.loadDatabase = async function loadDatabase() {
     settings: {},
     ...(global.db.data || {})
   }
-  global.db.chain = _.chain(global.db.data)
+  global.db.chain = chain(global.db.data)
 }
 loadDatabase()
 
-//if (opts['cluster']) {
-//  require9'/lib/cluster').Cluster()
 global.authFile = `${opts._[0] || 'kannabot'}.data.json`
 console.log(`Load AuthFile from ${authFile}`)
 const { state, saveState } = useSingleFileAuthState(global.authFile)
@@ -79,14 +93,15 @@ const { state, saveState } = useSingleFileAuthState(global.authFile)
 const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
-  logger: P({ level: 'debug' }),
+  // logger: pino({ level: 'trace' })
 }
 
-global.conn = simple.makeWASocket(connectionOptions)
+global.conn = makeWASocket(connectionOptions)
+conn.isInit = false
 
 if (!opts['test']) {
   setInterval(async () => {
-    if (global.db.data) await global.db.write()
+    if (global.db.data) await global.db.write().catch(console.error)
     if (opts['autocleartmp']) try {
       clearTmp()
 
@@ -117,18 +132,18 @@ async function connectionUpdate(update) {
   }
   if (global.db.data == null) await loadDatabase()
   console.log(JSON.stringify(update, null, 4))
-  if (update.receivedPendingNotifications) conn.sendMessage(`6287889347327@s.whatsapp.net`, {text: 'Successfully connected by\n\n*💌 • Name BOT:* ' + global.namebot + '\n*🎐 • Name OWNER:* ' + global.nameown + '\n*📞 • Nomor OWNER:* https://wa.me/' + global.nomorown })//made by Gama Naufal 
+  if (update.receivedPendingNotifications) conn.sendMessage(`6285334930628@s.whatsapp.net`, {text: 'Successfully connected by\n\n*💌 • Name BOT:* ' + global.namebot + '\n*🎐 • Name OWNER:* ' + global.nameown + '\n*📞 • Nomor OWNER:* https://wa.me/' + global.nomorown })//made by Gama Naufal 
 }
 
 
 process.on('uncaughtException', console.error)
 // let strQuot = /(["'])(?:(?=(\\?))\2.)*?\1/
 
-let isInit = true
-let handler = imports('./handler.js')
+let isInit = true;
+let handler = await import('./handler.js')
 global.reloadHandler = async function (restatConn) {
   try {
-    const Handler = await import`./handler.js?update=${Date.now()}`).catch(console.error)
+    const Handler = await import(`./handler.js?update=${Date.now()}`).catch(console.error)
     if (Object.keys(Handler || {}).length) handler = Handler
   } catch (e) {
     console.error(e)
