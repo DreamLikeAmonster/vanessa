@@ -6,7 +6,7 @@ global.__filename = function filename(pathURL = import.meta.url, rmPrefix = plat
 global.__dirname = function dirname(pathURL) { return path.dirname(global.__filename(pathURL, true)) }
 global.__require = function require(dir = import.meta.url) { return createRequire(dir) }
 const fs = require('fs')
-const yargs from 'yargs';
+const yargs require('yargs/yargs')
 const cp = require ('child_process')
 const _ = require('lodash')
 const syntaxerror = require('syntax-error')
