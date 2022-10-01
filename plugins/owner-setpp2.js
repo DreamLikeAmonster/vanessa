@@ -38,10 +38,8 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 	}
 }
 
-handler.help = ['setppfull']
+handler.help = ['setbotppfull']
 handler.command = /^(set(botpp|ppbot)(2|panjang|full?))$/i
-handlee.owner = true
-
 handler.owner = true
 
 export default handler
