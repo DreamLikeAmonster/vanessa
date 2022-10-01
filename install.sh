@@ -1,10 +1,10 @@
 pkg update && pkg upgrade
-pkg install git -y
-pkg install nodejs -y
-pkg install ffmpeg -y
-pkg install imagemagick -y
-npm install
+pkg install git 
+pkg install nodejs 
+pkg install libwebp
+pkg install ffmpeg 
+pkg install imagemagick 
 git clone https://github.com/DreamLikeAmonster/vanessa
 cd vanessa
-npm start
+node.
 
