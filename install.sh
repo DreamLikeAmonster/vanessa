@@ -7,5 +7,5 @@ pkg install imagemagick -y
 git clone https://github.com/DreamLikeAmonster/vanessa
 cd vanessa
 npm i
-node.
+node .
 
