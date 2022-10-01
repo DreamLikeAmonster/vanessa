@@ -12,10 +12,8 @@ let simple = require('.lib/simple
 var low
 try {
   low = require('lowdb')
-} catch (e) {
-  low = require('.lib/lowdb')
 }
-const { Low, JSONFile  }
+const { Low, JSONFile  } = low
 const P = require('pino')
 const mongoDB require('./lib/mongoDB.js')
 const {
