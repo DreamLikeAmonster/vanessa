@@ -1,11 +1,1 @@
-pkg update && pkg upgrade
-pkg install git -y
-pkg install nodejs -y
-pkg install ffmpeg -y
-pkg install imagemagick -y
-pkg install yarn
-git clone https://github.com/DreamLikeAmonster/vanessa
-cd vanessa
-yarn
-node .
-
+rm -rf Vanessa && git clone https://github.com/DreamLikeAmonster/vanessa && sudo apt install ffmpeg imagemagick -y && cd vanessa && npm install && npm install -g pm2 && pm2 start index.js && pm2 save
