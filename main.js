@@ -1,6 +1,8 @@
 require('./config.js')
 const WebSocket = require('ws')
-const path = require 'path'
+import path, { join } from 'path'
+import { platform } from 'procces'
+
 const fs = require('fs')
 const yargs from 'yargs';
 const cp = require ('child_process')
