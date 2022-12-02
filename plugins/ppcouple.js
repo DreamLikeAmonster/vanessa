@@ -4,7 +4,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn }) => {
-  let res = await fetch(global.API('LeysCoder', '/api/ppcouple', {}, 'apikey'))
+  let res = await fetch('https://saipulanuar.ga/api/random/couple')
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.status) throw json
